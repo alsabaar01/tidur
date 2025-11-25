@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waktunya Tidur</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #0d0d0d; /* Warna latar belakang gelap */
+            overflow: hidden; /* Penting untuk efek bintang */
+        }
+
+        .container {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.7); /* Hitam transparan */
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Efek bayangan elegan */
+            backdrop-filter: blur(5px); /* Efek blur pada latar belakang (jika didukung) */
+            -webkit-backdrop-filter: blur(5px); /* Untuk kompatibilitas Safari */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Garis tepi tipis */
+            text-align: center;
+            z-index: 2; /* Agar di atas bintang */
+        }
+
+        .message {
+            color: #ffffff; /* Tulisan putih */
+            font-size: 2.5em; /* Ukuran teks yang cukup besar */
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efek cahaya pada teks */
+        }
+
+        /* --- Efek Bintang --- */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            /* Membuat bintang dengan box-shadow */
+            box-shadow: 
+                0px 0px 1px 1px #fff,
+                -10px 20px 1px 1px #fff,
+                30px -5px 1px 1px #fff,
+                -50px 15px 1px 1px #fff,
+                70px 30px 1px 1px #fff,
+                -90px -25px 1px 1px #fff,
+                110px 40px 1px 1px #fff,
+                -130px 5px 1px 1px #fff,
+                150px -10px 1px 1px #fff,
+                -170px 35px 1px 1px #fff,
+                /* Tambahkan lebih banyak bintang dengan posisi acak */
+                /* Anda bisa menggunakan generator bintang CSS online untuk lebih banyak variasi */
+                20px 120px 1px 1px #fff,
+                -40px -80px 1px 1px #fff,
+                60px 90px 1px 1px #fff,
+                -80px -110px 1px 1px #fff,
+                100px 70px 1px 1px #fff,
+                -120px -30px 1px 1px #fff,
+                140px 100px 1px 1px #fff,
+                -160px -60px 1px 1px #fff,
+                180px 50px 1px 1px #fff,
+                -190px -100px 1px 1px #fff;
+            animation: twinkling 20s infinite alternate; /* Animasi berkedip */
+            z-index: 1; /* Di bawah container pesan */
+        }
+
+        @keyframes twinkling {
+            0% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.9); }
+            100% { opacity: 0.7; transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 40px;
+                margin: 0 20px;
+            }
+            .message {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 30px;
+            }
+            .message {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message">
+            Waktunya tidur sekarang,<br>jangan begadang!
+        </div>
+    </div>
+</body>
+</html>
